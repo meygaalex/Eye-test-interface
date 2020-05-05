@@ -1,0 +1,169 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+header{
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images/im1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+body{
+	font-size: 20px;
+	overflow-x: hidden;
+	color: white;
+	font-family: 'Zilla Slab', serif;
+}
+
+.clearfix:after{
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0px;
+	clear: both;
+}
+
+.row{
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+.logo{
+	height: 120px;
+	width: auto;
+	float: left;
+	margin-top: 30px;
+}
+
+.menu{
+	float: right;
+	margin-top: 60px;
+}
+
+.menu li{
+	display: inline-block;
+	list-style: none;
+	margin-left: 40px;
+}
+
+.menu li a{
+	padding: 5px 0;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 90%;
+	font-weight: 100;
+}
+
+.menu li a:hover{
+	border-bottom: 2px solid #a56740;
+}
+
+.main-header{
+	width: 1180px;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+h1{
+	color: #fff;
+	font-size: 200%;
+	word-spacing: 5px;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	font-weight: lighter;;
+}
+
+.btn{
+	display: inline-block;
+	padding: 10px 30px;
+	font-weight: lighter;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 200px;
+	transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-exp{
+	background-color: transparent;
+	color: #00FFFF;
+	margin-right: 15px;
+	border: 1px solid #00FFFF;
+}
+
+.btn-exp:hover{
+	background-color: #A9A9A9;
+	color: black;
+}
+
+.btn-show{
+	background-color: transparent;
+	color: #fff;
+	margin-right: 15px;
+	border: 1px solid #fff;
+}
+
+.btn-show:hover{
+	background-color: #00FFFF;
+	color: black;
+}
+
+.colorchange{
+	animation: changedine 2s infinite;
+}
+
+@keyframes changedine{
+	0%{color: #163236;}
+	25%{color: #00FFFF;}
+	50%{color: white;}
+	100%{color: #00FFFF;}
+}
+
+.menu-icon{display: none;}
+
+/*Responsive Queries*/
+
+@media only screen and (max-width: 1180px){
+	.main-header{
+		width: 100%;
+		padding: 0 2%;
+	}
+}
+
+@media only screen and (max-width: 998px){
+	h1{font-size: 200;}
+}
+
+@media only screen and (max-width: 768px){
+	h1{font-size: 180%;}
+
+	.menu{display: none;}
+
+	.menu-icon{
+		display: inline-block;
+		color: #fff;
+		float: right;
+		margin-top: 30px;
+		margin-right: 20px;
+	}
+
+	.menu{float: left;}
+
+	.menu li{
+		display: block;
+		margin-top: 10x;
+	}
+}
+
+@media only screen and (max-width: 480px){
+	.btn-exp{
+		margin-bottom: 20px;
+	}
+	h1{font-size: 160%;}
+}

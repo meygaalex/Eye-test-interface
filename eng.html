@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EyePal</title>
+  <link rel="stylesheet" type="text/css">
+</head>
+
+<body style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images/im1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;">
+
+  
+    
+    <div class="main-h">
+    <h1 style="font-size: 150%; color: #00ffff;">How to use the Chart</h1>
+    <div class="new">
+    <ul style="list-style-type: circle;">
+      <li>Make sure you're using a desktop computer (or if you're using a laptop or tablet, make sure you've got really long arms!)</li>
+      <li>Position yourself approximately 1 metre from your computer screen, facing it directly, and cover your left eye .</li>
+      <li>When you click <b>"Start"</b>, you will be shown a line of eight characters. In the field below, type the letters as you see them, without spaces.</li>
+      <li>Once you've entered each letter, click <b>"Next"</b>.</li>
+      <li>If you've entered all letters correctly, you'll progress to the next stage of the chart.</li>
+      <li>If you enter one or more letters incorrectly, you'll be taken through to your results. Oops, was that just a typo? Not to worry. If you feel your mistake was a result of your fingers rather than your eyes, select <b>"Re-Do Test"</b> to go back and try again.</li>
+      <li>Once you've reached your result, repeat the process for your <b>right eye.</b></li>
+    </ul><br>
+    <h1 style="font-size: 150%; color: #00ffff;">How Does the Online Eye Test Work?</h1>
+    <ul style="list-style-type: none;">
+      <li>This interactive eye exam will test your sight from 20/70 to 20/20 vision. If you successfully reach the end of the test, you'll be directed to the 20/20 (perfect vision) results page.</li>
+      <li>If you wear glasses or contact lenses, it's important to test both with and without your corrective lenses. This will give you an idea as to whether your current script is the correct strength for you.</li>
+    </ul><br>
+    </div>
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn" class="btn btn-exp">Let's Begin !</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content" onload="Captcha();">
+      <span class="close">&times;</span>
+      <div class="m-ct">
+      <p style="font-size: 24px; letter-spacing: 2px; text-transform: uppercase; padding-left: 80px; color: white;">ONLINE EYE TEST</p>
+      <input style="padding-left: 80px; font-size: 17px; border-style: none;
+      background-color: black; color: #00ffff;  margin: 10px; margin-left: 30px;" type="text" id="mainCaptcha"/><br>
+      <input style="text-transform: uppercase; padding-left: 80px; font-size: 20px; margin: 10px;" type="text" id="txtInput"/> <br><br>
+
+<!--      <input style="padding-left: 80px; font-size: 14px; border-style: none;
+      background-color: black; color: #00ffff;  margin: 10px; margin-left: 30px;" type="text" id="mainCaptcha"/><br>
+      <input style="text-transform: uppercase; padding-left: 80px; font-size: 20px; margin: 10px;" type="text" id="txtInput"/> <br><br>
+
+       <input style="padding-left: 80px; font-size: 11px; border-style: none;
+      background-color: black; color: #00ffff;  margin: 10px; margin-left: 30px;" type="text" id="mainCaptcha"/><br>
+      <input style="text-transform: uppercase; padding-left: 80px; font-size: 20px; margin: 10px;" type="text" id="txtInput"/> <br><br>
+
+      <input style="padding-left: 80px; font-size: 9px; border-style: none;
+      background-color: black; color: #00ffff;  margin: 10px; margin-left: 30px;" type="text" id="mainCaptcha"/><br>
+      <input style="text-transform: uppercase; padding-left: 80px; font-size: 20px; margin: 10px;" type="text" id="txtInput"/> <br><br>
+-->
+
+      <input style="border-radius: 5px;
+      font-size: 15px; text-transform: uppercase; padding: 10px; margin-left: 80px; margin-right: 20px;" type="button" class="bb" id="refresh" value="Refresh" onclick="Captcha();">
+      <input class="bb" style="border-radius: 5px;
+      font-size: 15px; text-transform: uppercase; padding: 10px;" id="Button1" type="button" value="Check" onclick="alert(ValidCaptcha());"/>
+
+    </div>
+    </div>
+
+    </div>
+
+    <a href="#" class="btn btn-show">Free Consultation</a>
+
+    </div>
+
+    <style type="text/css">
+
+      .main-h{
+        padding-top: 100px;
+        padding-left: 100px;
+        padding-right: 350px;
+      }
+
+      .btn{
+        display: inline-block;
+        padding: 10px 30px;
+        font-weight: lighter;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 200px;
+        transition: background-color 0.2s, border 0.2s, color 0.2s;
+      }
+
+      .btn-exp{
+        background-color: transparent;
+        color: #00FFFF;
+        margin-right: 15px;
+        border: 1px solid #00FFFF;
+      }
+
+      .btn-exp:hover{
+        background-color: #A9A9A9;
+        color: black;
+      }
+
+      .btn-show{
+        background-color: transparent;
+        color: #fff;
+        margin-right: 15px;
+        border: 1px solid #fff;
+      }
+
+      .btn-show:hover{
+        background-color: #00FFFF;
+        color: black;
+      }
+
+      .new{
+        font-family: "Times New Roman", Times, serif;
+        color: white;
+        font-size: 17.5px;
+      }
+
+      .bb:hover{
+        background-color: #00FFFF; 
+      }
+
+      /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: black;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  height: 50%;
+}
+
+.m-ct{
+  padding-top: 100px;
+  padding-left: 250px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The Close Button */
+.close {
+  color: #00ffff;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+    </style>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function Captcha(){
+                     var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+                     var i;
+                     for (i=0;i<6;i++){
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                       var g = alpha[Math.floor(Math.random() * alpha.length)];
+                      }
+                    var code = ' ' + a + ' ' + b + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+                    document.getElementById("mainCaptcha").value = code
+                  }
+                  function ValidCaptcha(){
+                      var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
+                      var string2 = removeSpaces(document.getElementById('txtInput').value);
+                      if (string1 == string2){
+                        return true;
+                      }
+                      else{        
+                        return false;
+                      }
+                  }
+                  function removeSpaces(string){
+                    return string.split(' ').join('');
+                  }
+</script>
+    
+</body>
+</html>

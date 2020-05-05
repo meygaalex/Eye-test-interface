@@ -1,0 +1,265 @@
+
+<!DOCTYPE HTML>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" />
+<style type="text/css">
+  body {
+    font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: purple;
+    background-color: #d8da3d }
+  h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif }
+Button {
+	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+Button:hover {
+	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+	background-color:#5cbf2a;
+}
+Button:active {
+	position:relative;
+	top:1px;
+}
+body{
+                                font-family: verdana;
+                        }
+                        #result{
+                                height: 25px;
+                                width: 200px;
+                                border: 1px solid #ccc;
+                                padding: 10px;
+                                box-shadow: 0 0 10px 0 #bbb;
+                                margin-left: 40%;
+                                font-size: 14px;
+                                line-height: 25px;
+                        }
+                        button{
+                                font-size: 15px;
+                                position: absolute;
+                                float: left;
+                        }
+
+</style>
+</head>
+<title>eye tests</title>
+<script language="Javascript"><!--
+//global vars
+var score = 0;
+
+function tstLetters(){
+document.key.src = "G/key_letters.gif";
+a = ((Math.floor(Math.random()*26))+1)+20; document.eye1.src=img[a].src;
+b = ((Math.floor(Math.random()*26))+1)+20; document.eye2.src=img[b].src;
+c = ((Math.floor(Math.random()*26))+1)+20; document.eye3.src=img[c].src;
+d = ((Math.floor(Math.random()*26))+1)+20; document.eye4.src=img[d].src;
+e = ((Math.floor(Math.random()*26))+1)+20; document.eye5.src=img[e].src;
+f = ((Math.floor(Math.random()*26))+1)+20; document.eye6.src=img[f].src;
+g = ((Math.floor(Math.random()*26))+1)+20; document.eye7.src=img[g].src;
+h = ((Math.floor(Math.random()*26))+1)+20; document.eye8.src=img[h].src;
+i = ((Math.floor(Math.random()*26))+1)+20; document.eye9.src=img[i].src;
+j = ((Math.floor(Math.random()*26))+1)+20; document.eye10.src=img[j].src;
+document.eyetest.test1.focus();
+}
+
+function gradeTest(){
+score = 0;
+document.eyetest.scorebox.value = " ";
+
+if(document.eyetest.test1.value.toUpperCase() == document.eye1.src.charAt(document.eye1.src.length-5)){
+	score = score + 1;
+	}
+if(document.eyetest.test2.value.toUpperCase() == document.eye2.src.charAt(document.eye2.src.length-5)){
+	score = score + 1;
+	}
+if(document.eyetest.test3.value.toUpperCase() == document.eye3.src.charAt(document.eye3.src.length-5)){
+	score = score + 1;
+	}
+if(document.eyetest.test4.value.toUpperCase() == document.eye4.src.charAt(document.eye4.src.length-5)){
+	score = score + 1;
+	}
+if(document.eyetest.test5.value.toUpperCase() == document.eye5.src.charAt(document.eye5.src.length-5)){
+	score = score + 1;
+	}
+if(document.eyetest.test6.value.toUpperCase() == document.eye6.src.charAt(document.eye6.src.length-5)){
+	score = score + 1;
+	}
+if(document.eyetest.test7.value.toUpperCase() == document.eye7.src.charAt(document.eye7.src.length-5)){
+	score = score + 1;
+	}
+if(document.eyetest.test8.value.toUpperCase() == document.eye8.src.charAt(document.eye8.src.length-5)){
+	score = score + 1;
+	}
+if(document.eyetest.test9.value.toUpperCase() == document.eye9.src.charAt(document.eye9.src.length-5)){
+	score = score + 1;
+	}
+if(document.eyetest.test10.value.toUpperCase() == document.eye10.src.charAt(document.eye10.src.length-5)){
+	score = score + 1;
+	}
+document.eyetest.scorebox.value = "  " + score + " / 10";
+}
+//-->
+</script>
+<style>
+body {font-size : 10pt; font-family : Arial, sans-serif; margin-left : 15px; margin-right : 0px}
+p {font-size : 10pt; font-family : Arial, sans-serif}
+a {font-size : 10pt; font-family : Arial, sans-serif}
+.title {font-size : 12pt; font-family : Arial, sans-serif; font-weight : bold}
+.copy {font-size : 8pt; font-family : Arial, sans-serif; color : #000000}
+a:hover {color : #000099}
+</style>
+</head>
+
+<body bgcolor="lightblue">
+	<div id="result">
+       <button onclick="startConverting();"><i class="fa fa-microphone"></i></button>
+
+    </div>
+
+<table border="1" width="455" cellpadding="1" cellspacing="1" bgcolor="#ffffff">
+	<tr>
+		<td>
+		
+<table border="0" width="445" cellpadding="5" cellspacing="1">
+	<tr>
+		<td valign="top" colspan="3"><p class="title">Hyper Myopia Test</p>
+		<p>Test objects are chosen randomly. Your results are not recorded. 
+		See your eye doctor regularly.</p></td>
+	</tr>
+</table>
+
+</td></tr></table>
+
+<br><br>
+<form name="eyetest">
+<table border="1" width="500" cellpadding="5" cellspacing="1" bgcolor="#ffffff">
+	<tr>
+		<td>Key</td>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+		<td>7</td>
+		<td>8</td>
+		<td>9</td>
+		<td>10</td>
+	</tr>
+	<tr>
+		<td><img src="images\key_letters.gif" width="175" height="170" border="0" name="key"></td>
+		<td><img src="images\test_letters_B.gif" width="25" height="25" border="1" name="eye1"><br>
+            
+		<td><img src="images\test_letters_H.gif" width="25" height="25" border="1" name="eye2"><br>
+	
+		<td><img src="images\test_letters_X.gif" width="25" height="25" border="1" name="eye3"><br>
+		<td><img src="images\test_letters_F.gif" width="25" height="25" border="1" name="eye4"><br>
+		<td><img src="images\test_letters_M.gif" width="25" height="25" border="1" name="eye5"><br>
+		<td><img src="images\test_letters_W.gif" width="25" height="25" border="1" name="eye6"><br>
+		<td><img src="images\test_letters_C.gif" width="25" height="25" border="1" name="eye7"><br>
+		<td><img src="images\test_letters_T.gif" width="25" height="25" border="1" name="eye8"><br>
+		<td><img src="images\test_letters_E.gif" width="25" height="25" border="1" name="eye9"><br>
+		<td><img src="images\test_letters_P.gif" width="25" height="25" border="1" name="eye10"><br>
+		
+	</tr>
+	<tr>
+		<td>Enter your answers here:</td>
+		<td><input type="text" size="2" name="test1"></td>
+		<td><input type="text" size="2" name="test2"></td>
+		<td><input type="text" size="2" name="test3"></td>
+		<td><input type="text" size="2" name="test4"></td>
+		<td><input type="text" size="2" name="test5"></td>
+		<td><input type="text" size="2" name="test6"></td>
+		<td><input type="text" size="2" name="test7"></td>
+		<td><input type="text" size="2" name="test8"></td>
+		<td><input type="text" size="2" name="test9"></td>
+		<td><input type="text" size="2" name="test10"></td>
+	</tr>
+	<tr>
+                <div class=Button">
+		<td colspan="11" align="right"><input type="button" value="Grade Test" onclick="gradeTest()"></td>
+		</div>	
+</tr>
+	<tr>
+		<td colspan="11" align="right">Score: <input type="text" size="20" name="scorebox"></td>
+	</tr>
+</table>
+<br><br>
+</form>
+
+
+<table border="1" width="455" cellpadding="1" cellspacing="1" bgcolor="#ffffff">
+	<tr>
+		<td>
+		
+<table border="0" width="445" cellpadding="5" cellspacing="1">
+	<tr>
+		<td valign="top" colspan="3"><p class="title">Check your own results</p>
+		<p>If your score is between <b> 7-10 </b>, Congratulations, you can read all the text from 40cm away. You seem to have good near vision.</p>
+                <p>If your score is less than <b> 7 </b>, Please visit the doctor.</p></td>
+	</tr>
+</table>
+
+</td></tr></table>
+
+<script type="text/javascript">
+
+                        var r = document.getElementById('result');
+
+                        function startConverting () {
+                                if('webkitSpeechRecognition' in window){
+                                        var speechRecognizer = new webkitSpeechRecognition();
+                                        speechRecognizer.continuous = true;
+                                        speechRecognizer.interimResults = true;
+                                        speechRecognizer.lang = 'en-IN';
+                                        speechRecognizer.start();
+
+                                        var finalTranscripts = '';
+
+                                        speechRecognizer.onresult = function(event){
+                                                var interimTranscripts = '';
+                                                for(var i = event.resultIndex; i < event.results.length; i++){
+                                                        var transcript = event.results[i][0].transcript;
+                                                        transcript.replace("\n", "<br>");
+                                                        if(event.results[i].isFinal){
+                                                                finalTranscripts += transcript;
+                                                                if (finalTranscripts.includes('take other test'))
+                                                                {
+                                                                        window.location.replace("http://localhost/appointment/explore.php");
+                                                                }
+                                 
+
+                                                        }
+                                                        else{
+                                                                interimTranscripts += transcript;
+                                                        }
+                                                }
+                                                r.innerHTML = finalTranscripts + '<span style="color:#999">' + interimTranscripts + '</span>';
+                                        };
+                                        speechRecognizer.onerror = function (event) {
+                                        };
+                                }else{
+                                        r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
+                                }
+                        }
+
+
+
+                </script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EyePal</title>
+  <link rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" />
+</head>
+
+<body style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images/im1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;">
+    
+    <div class="main-h">
+    <h1 style="font-size: 300%; color: #00ffff;">How to use the Astigmatism Chart</h1>
+    <div class="new">
+    <ul style="list-style-type: circle;">
+      <li>Remove your glasses</li>
+      <li>Stand back 3 feet from the screen..</li>
+      <li>Cover left eye with your left hand </li>
+      <li>Look closely at the image</li>
+      <li>Repeat with the right eye.</li>
+    </ul><br>
+ 
+
+    <a href="astigmatism.html" class="btn btn-show">Start the test</a>
+
+    </div>
+    <div id="result">
+       <button onclick="startConverting();"><i class="fa fa-microphone"></i></button>
+
+    </div>
+    <script type="text/javascript">
+
+                        var r = document.getElementById('result');
+
+                        function startConverting () {
+                                if('webkitSpeechRecognition' in window){
+                                        var speechRecognizer = new webkitSpeechRecognition();
+                                        speechRecognizer.continuous = true;
+                                        speechRecognizer.interimResults = true;
+                                        speechRecognizer.lang = 'en-IN';
+                                        speechRecognizer.start();
+
+                                        var finalTranscripts = '';
+
+                                        speechRecognizer.onresult = function(event){
+                                                var interimTranscripts = '';
+                                                for(var i = event.resultIndex; i < event.results.length; i++){
+                                                        var transcript = event.results[i][0].transcript;
+                                                        transcript.replace("\n", "<br>");
+                                                        if(event.results[i].isFinal){
+                                                                finalTranscripts += transcript;
+                                                                if (finalTranscripts.includes('start the test'))
+                                                                {
+                                                                        window.location.replace("http://localhost/appointment/astigmatism.html");
+                                                                }
+                                 
+
+                                                        }
+                                                        else{
+                                                                interimTranscripts += transcript;
+                                                        }
+                                                }
+                                                r.innerHTML = finalTranscripts + '<span style="color:#999">' + interimTranscripts + '</span>';
+                                        };
+                                        speechRecognizer.onerror = function (event) {
+                                        };
+                                }else{
+                                        r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
+                                }
+                        }
+
+
+
+                </script>
+
+    <style type="text/css">
+
+      .main-h{
+        padding-top: 100px;
+        padding-left: 100px;
+        padding-right: 350px;
+      }
+
+      .btn{
+        display: inline-block;
+        padding: 10px 30px;
+        font-weight: lighter;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 200px;
+        transition: background-color 0.2s, border 0.2s, color 0.2s;
+      }
+
+      .btn-exp{
+        background-color: transparent;
+        color: #00FFFF;
+        margin-right: 15px;
+        border: 1px solid #00FFFF;
+      }
+
+      .btn-exp:hover{
+        background-color: #A9A9A9;
+        color: black;
+      }
+
+      .btn-show{
+        background-color: transparent;
+        color: #fff;
+        margin-right: 15px;
+        border: 1px solid #fff;
+      }
+
+      .btn-show:hover{
+        background-color: #00FFFF;
+        color: black;
+      }
+
+      .new{
+        font-family: "Times New Roman", Times, serif;
+        color: white;
+        font-size: 20.5px;
+      }
+
+      .bb:hover{
+        background-color: #00FFFF; 
+      }
+      body{
+                                font-family: verdana;
+                        }
+                        #result{
+                                height: 25px;
+                                width: 200px;
+                                border: 1px solid #ccc;
+                                padding: 10px;
+                                box-shadow: 0 0 10px 0 #bbb;
+                                margin-left: 40%;
+                                font-size: 14px;
+                                line-height: 25px;
+                        }
+                        button{
+                                font-size: 20px;
+                                position: absolute;
+                                float: left;
+                        }
+
+
+    </style>
+
+
+
+
+    
+</body>
+</html>

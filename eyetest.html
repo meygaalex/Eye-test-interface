@@ -1,0 +1,90 @@
+<html>
+<head>
+<title> eye testing website </title>
+<style> 
+    h1{  font-weight: 200;
+         text-align:center;
+         font-family:cursive;
+         background-color: darkturquoise;
+         font-size:60;
+    }
+    h3{
+        color:red;
+        font-size: 30;
+        
+    }
+    ul{
+        background-color: antiquewhite;
+        padding: 20px;
+    }
+    form{
+        background-color:antiquewhite;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        background-color: cadetblue;
+        padding: 10px;
+        
+    }
+    
+</style>
+</head>
+<body style="background-color: azure;">
+
+<h1>Eye Testing </h1>
+<h3> INSTRUCTIONS </h3> 
+    <table>
+    <tr>
+    <td>   
+    <ul>
+    <li> Sit in a comfortable position and a suitable distance from the screen</li>
+    <li> As this test is for Myopia </li>
+    <li> Make sure you are 25 Cm from the screen </li>
+    <li>Answer the questions regarding the picture </li>
+    <li> Picture is Scalled to your screen length so if not refresh the page and it will be automatically scaled again </li>
+    <li> Take the eye test in a normal envirnment without any other bright objects </li>  
+    <li> Answer the questions with two eyes separately </li>
+    <li> Test results will be displayed at the end of the test</li>
+    <li> Fill the following and proceed to the test</li>
+    </ul>
+    </td>
+    <td>
+    <div>
+    <p Style="color:blue">NAME: </p>
+    <input type="text">
+    <p Style="color:blue"> GENDER:</p>
+    <input type="radio" name="gender" value="male">MALE<br>
+    <input type="radio" name="gender" value="female">FEMALE<br>
+    <input type="radio" name="gender" value="other">OTHER<br><br>
+   <!-- <select id ="dp1">
+  <option value="English">English</option>
+  <option value="Hindi">Hindi</option>
+  <option value="Shapes">Shapes</option>
+    </select>  --> 
+    </div>
+    </td>    
+    </tr>    
+    </table>
+    <center>
+        <h2 style="color: blue">START TEST</h2>
+    <button name="redirect" onclick= "redirect()"> SUBMIT </button></center>
+    <script type ="text/javascript">
+        function redirect()
+        { window.location.href = "e1.html";
+         var e = document.getElementById("dp1");
+         var ch = e.options[e.selectIndex].value;
+         document.writeln(ch);
+         if(ch =="English")
+             { window.location.href = "e1.html";}
+         else if (ch == "Hindi")
+             { window.location.href = "e2.html";}
+         else if (ch == "Shapes")
+            { window.location.href = "e3.html";}
+        }
+    
+    </script>
+    <center>
+    <h2 style="color:red"> FOR FURTHER CLARIFICATION CLICK HERE</h2>
+    <a href="faq.html"> FAQ </a>
+        </center>

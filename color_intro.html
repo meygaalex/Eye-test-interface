@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EyePal</title>
+  <link rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" />
+</head>
+
+<body style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images/im1.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  height: 100vh;">
+
+    <h1> Instructions</h1>
+    <hr>
+    <div class="main-h">
+    <h1 style="font-size: 150%; color: #00ffff;">How to take the color blindness quiz</h1>
+    <div class="new">
+    <ul style="list-style-type: circle;font-size: 100%;">
+      <li>Remove all glasses with colored lenses. The test is designed to be taken with the naked eye or with a prescription if you wear one. It will not work with colored lenses of any type and will lead to inaccurate results. Taking the online test with color correcting glasses to “prove” that they work is a misconception and inaccurate.</li>
+      <li>Turn brightness on screen to high. Light affects color and the ability to perceive differentiation.</li>
+    
+    </ul><br>
+     <a href="color_blindness.html" class="btn btn-show">Start your quiz</a>
+
+     <div class="main-h2">
+    <h1 style="font-size: 150%; color: #00ffff;">How to determine results after quiz:</h1>
+    <div class="new" style="font-size: 100%;">
+    <ul style="list-style-type: circle;">
+      <li>If your score is <b><u> less than 7 </u></b> the please consult a doctor.</li>
+      <li>If the score is either <b><u> eight or nine </u></b> out of eleven correct answers, further testing will be needed to find if you are exhibiting red green deficient tendencies.</li>
+      <li>If yourscore is <b><u> ten </u></b> correct answers out of eleven is considered to be within the normal range.</li>
+    </ul><br>
+ 
+
+    </div>
+    <div id="result">
+                                        <button onclick="startConverting();"><i class="fa fa-microphone"></i></button>
+
+                </div>
+                 <script type="text/javascript">
+
+                        var r = document.getElementById('result');
+
+                        function startConverting () {
+                                if('webkitSpeechRecognition' in window){
+                                        var speechRecognizer = new webkitSpeechRecognition();
+                                        speechRecognizer.continuous = true;
+                                        speechRecognizer.interimResults = true;
+                                        speechRecognizer.lang = 'en-IN';
+                                        speechRecognizer.start();
+
+                                        var finalTranscripts = '';
+
+                                        speechRecognizer.onresult = function(event){
+                                                var interimTranscripts = '';
+                                                for(var i = event.resultIndex; i < event.results.length; i++){
+                                                        var transcript = event.results[i][0].transcript;
+                                                        transcript.replace("\n", "<br>");
+                                                        if(event.results[i].isFinal){
+                                                                finalTranscripts += transcript;
+                                                                if (finalTranscripts.includes('start your quiz'))
+                                                                {
+                                                                        window.location.replace("http://localhost/appointment/color_blindness.html");
+                                                                }
+                                 
+
+                                                        }
+                                                        else{
+                                                                interimTranscripts += transcript;
+                                                        }
+                                                }
+                                                r.innerHTML = finalTranscripts + '<span style="color:#999">' + interimTranscripts + '</span>';
+                                        };
+                                        speechRecognizer.onerror = function (event) {
+                                        };
+                                }else{
+                                        r.innerHTML = 'Your browser is not supported. If google chrome, please upgrade!';
+                                }
+                        }
+
+
+
+                </script>
+
+    <style type="text/css">
+
+      .main-h{
+        padding-top: 100px;
+        padding-left: 100px;
+        padding-right: 350px;
+      }
+     .main-h2{
+        padding-top: 100px;
+        padding-left: 20px;
+        
+      }
+      h1 {
+        text-align: center;
+        color: White;
+        font-family: Verdana, sans-serif;
+        font-size: 50px;
+	margin-top: 0px;
+	margin-bottom: 1px;
+      }
+
+      .btn{
+        display: inline-block;
+        padding: 10px 30px;
+        font-weight: lighter;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 200px;
+        transition: background-color 0.2s, border 0.2s, color 0.2s;
+      }
+
+      .btn-exp{
+        background-color: transparent;
+        color: #00FFFF;
+        margin-right: 15px;
+        border: 1px solid #00FFFF;
+      }
+
+      .btn-exp:hover{
+        background-color: #A9A9A9;
+        color: black;
+      }
+
+      .btn-show{
+        background-color: transparent;
+        color: #fff;
+        margin-right: 15px;
+        border: 1px solid #fff;
+      }
+
+      .btn-show:hover{
+        background-color: #00FFFF;
+        color: black;
+      }
+
+      .new{
+        font-family: "Times New Roman", Times, serif;
+        color: white;
+        font-size: 20.5px;
+      }
+
+      .bb:hover{
+        background-color: #00FFFF; 
+      }
+body{
+                                font-family: verdana;
+                        }
+                        #result{
+                                height: 25px;
+                                width: 200px;
+                                border: 1px solid #ccc;
+                                padding: 10px;
+                                box-shadow: 0 0 10px 0 #bbb;
+                                margin-left: 40%;
+                                font-size: 14px;
+                                line-height: 25px;
+                        }
+                        button{
+                                font-size: 20px;
+                                position: absolute;
+                                float: left;
+                        }
+
+
+
+    </style>
+
+
+
+
+    
+</body>
+</html>
